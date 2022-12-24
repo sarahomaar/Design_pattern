@@ -93,7 +93,63 @@ console.log(audiinf.showinf())
 
   }
 
-  ///2
+  ///a
    class computer{
+constructor( keyboard,mouse,ram){
+    
+    this.keyboard=keyboard;
+    this.mouse=mouse;
+    this.ram=ram;
 
+}
+   calcmemory();
+   calcspeed();
+   }
+
+   class laptop extends computer{
+    constructor(keyboard,mouse,ram,usb){
+        super(keyboard,mouse,ram);
+        this.usb=usb;
+
+    }
+    typeoflaptop();
+   }
+   class smartphone extends computer {
+    constructor(keyboard,mouse,ram,camera){
+        super(keyboard,mouse,ram);
+        this.camera=camera;
+
+    }
+    NumofPic();
+   }
+
+   //2
+   class employee{
+    constructor(name,jobtittle){
+this.name=name;
+this.jobtittle=jobtittle;
+    }
+    get name(){
+return `Name:${this.name}`
+    }
+    get job(){
+        return `job:${this.jobtittle}`
+    }
+
+   }
+   let wage;
+   let house ;
+   class hourlyemloyee extends employee{
+    constructor(name,jobtittle,wage){
+super(name,jobtittle)
+this.wage=wage;
+    }
+    calcwage();
+   }
+   class salaryemployee extends employee{
+    constructor(name,jobtittle,salary){
+        super(name,jobtittle)
+this.salary=salary;
+    }
+    weeklysalary();
    }
