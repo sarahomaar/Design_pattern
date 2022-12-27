@@ -30,13 +30,13 @@ class vehicles{
 
     }
     showinf(){
-        return`modeltype:${this.modeltype},
+        return `modeltype:${this.modeltype},
         ownership cost:${this.ownershipcost},
         warranty:${this.warranty},
         seating capacity:${this.seatingcap},
         fuel type:${this.fueltype},
         mileage:${this.mileage},
-        price:${this.price};`
+        price:${this.price}`;
     }
 
   }
@@ -58,7 +58,7 @@ console.log(audiinf.showinf())
         warranty:${this.warranty},
         seating capacity:${this.seatingcap},
         fuel type:${this.fueltype},
-        modeltype:${this.modeltype} ;`
+        modeltype:${this.modeltype}`;
     }
   }
   let infford =new ford ("2","500$","300","10","55","petrol","string");
@@ -70,7 +70,7 @@ console.log(audiinf.showinf())
         this.maketype=maketype;
     }
     bajajinf(){
-        return`
+        return `
         mileage:${this.mileage},
         price:${this.price},
         cylinders:${this.cylinders},
@@ -78,7 +78,7 @@ console.log(audiinf.showinf())
         coolingtype:${this.coolingtype},
         wheeltype:${this.wheeltype},
         fueltanksize:${this.fueltanksize},
-        maketype:${this.maketype} ;`
+        maketype:${this.maketype}`;
     }
   }
   let binf =new Bajaj ("2","100$","300","10","liquid","petrol","large","string");
@@ -96,14 +96,14 @@ console.log(audiinf.showinf())
   ///a
    class computer{
 constructor( keyboard,mouse,ram){
-    
     this.keyboard=keyboard;
     this.mouse=mouse;
     this.ram=ram;
-
 }
-   calcmemory();
-   calcspeed();
+   calcmemory(){
+
+   };
+   calcspeed(){};
    }
 
    class laptop extends computer{
@@ -112,11 +112,43 @@ constructor( keyboard,mouse,ram){
         this.usb=usb;
 
     }
-    typeoflaptop();
+    typeoflaptop(){};
    }
    class smartphone extends computer {
     constructor(keyboard,mouse,ram,camera){
         super(keyboard,mouse,ram);
+        this.camera=camera;
+
+    }
+    NumofPic(){};
+   }
+
+  ///a
+   class computer{
+constructor( price,memory,ram){
+    
+    this.price=price;
+    this.memory=memory;
+    this.ram=ram;
+
+}
+   calcmemory(){
+    return `memory is ${this.memory}`
+   };
+   calcspeed();
+   }
+
+   class laptop extends computer{
+    constructor(price,memory,ram,usb){
+        super(price,memory,ram);
+        this.usb=usb;
+
+    }
+    typeoflaptop();
+   }
+   class smartphone extends computer {
+    constructor(price,memory,ram,camera){
+        super(price,memory,ram);
         this.camera=camera;
 
     }
