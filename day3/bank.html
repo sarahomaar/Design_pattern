@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+class account{
+    constructor(accountnam,money){
+        this.accountnam=accountnam;
+        this.money=money;
+    }
+
+    getaccountnam(){
+      return  this.accountnam;
+    }
+    getmoney(){
+     return   this.money;
+    }
+    display(){
+        return`Name of account is ${this.accountnam} your money is ${this.money}`;
+    }
+}
+class savingAcc extends account{
+    constructor(accountnam,money){
+        super(accountnam,money);
+    }
+}
+class currentAcc extends account{
+    constructor(accountnam,money){
+    super(accountnam,money)}
+}
+class system{
+    constructor(account,money){
+        this.account=account;
+        this.money=money;
+    }
+    getdeposite(){
+      
+            this.account.money += this.money;
+        
+    }
+    getwithdraw(){
+        this.account.money-=this.money;
+    }
+    transaction(acc1,acc2,money){
+        acc1.money-=money;
+        acc2.money+=money;
+    }
+}
+let no1= new savingAcc("Sarah",3000);
+let no2= new currentAcc("Sally",4000);
+console.log(no1.display());
+
+ let deposite = new system(no1,2000);
+ deposite.getdeposite()
+ console.log (no1.display());
+
+
+ let trans = new system( no1,no2,1000);
+  trans.transaction(no1,no2,1000);
+console.log (no1.display());
+console.log (no2.display());
+
+
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class monster{
+            constructor(name , hp){
+                this.name=name;
+                this.hp=hp;
+            }
+            getname(){
+              return  this.name;
+            }
+            gethp(){
+             return   this.hp;
+            }
+            attack(){
+
+            }
+        }
+        class alien extends monster{
+            constructor(name , hp){
+                super(name , hp);
+            }
+            attack(){
+                this.hp -=50;
+                if(this.hp<=0){
+                    console.log("game over");
+                }
+                return this.hp;
+            }
+        }
+        class beast extends monster{
+            constructor(name , hp){
+                super(name , hp);
+            }
+            attack(){
+                this.hp -=50;
+                if(this.hp<=0){
+                    console.log("game over");
+                }
+                return this.hp;
+            }
+        }
+        class zombie extends monster{
+            constructor(name , hp){
+                super(name , hp);
+            }
+            attack(){
+                this.hp -=50;
+                if(this.hp<=0){
+                    console.log("game over");
+                }
+                return this.hp;
+            }
+        }
+
+        class vampire extends monster{
+            constructor(name , hp){
+                super(name , hp);
+            }
+            attack(){
+                this.hp -=50;
+                if(this.hp<=0){
+                    console.log("game over");
+                }
+                return this.hp;
+            }
+        }
+        class mummy extends monster{
+            constructor(name , hp){
+                super(name , hp);
+            }
+            attack(){
+                this.hp -=50;
+                if(this.hp<=0){
+                    console.log("game over");
+                }
+                return this.hp;
+            }
+        }
+        class Decreator{
+            constructor(monster,name,hp){
+                this.monster=monster;
+                this.name=name;
+                this.hp=hp;
+
+            }
+            attack(){
+            return    this.monster.attack();
+            }
+            updated_name(){
+            return    this.monster.getname()+this.name;
+
+            }
+            updated_hp(){
+             return   this.monster.gethp()+this.hp;
+            }
+        }
+        
+        class lasers extends Decreator{
+            constructor(monster,name,hp){
+                super(monster,name,hp);
+
+            }
+            
+        }
+class poison extends Decreator{
+    constructor(monster,name,hp){
+                super(monster,name,hp);
+
+            }
+}
+
+        class flying extends Decreator{
+            constructor(monster,name,hp){
+                super(monster,name,hp);
+
+            }
+        }
+        class speed extends Decreator{
+            constructor(monster,name,hp){
+                super(monster,name,hp);
+
+            }
+        }
+        class strength extends Decreator{
+            constructor(monster,name,hp){
+                super(monster,name,hp);
+
+            }
+        }
+        class fire extends Decreator{
+            constructor(monster,name,hp){
+super(monster,name,hp);
+            }
+        }
+
+        let  Z= new zombie("zombi1",100);
+        Z.attack();
+        let fires= new fire ( Z, "fire",70);
+
+        console.log (fires.updated_hp());
+
+
+
+        
+    </script>
+    
+</body>
+</html>
